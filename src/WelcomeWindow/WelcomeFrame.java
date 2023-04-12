@@ -9,6 +9,7 @@ public class WelcomeFrame {
     PlayButton playButton = new PlayButton();
     ModeButton modeButton = new ModeButton();
     GridSelectButton gridSelectButton = new GridSelectButton();
+    PixelLettersLabel pixelLettersLabel = new PixelLettersLabel();
     ImageIcon logoImage = new ImageIcon("logo.jpg");
 
     public WelcomeFrame() {
@@ -27,6 +28,10 @@ public class WelcomeFrame {
         frame.add(playButton);
         frame.add(modeButton);
         frame.add(gridSelectButton);
+        frame.add(pixelLettersLabel.labelN);
+        frame.add(pixelLettersLabel.labelE);
+        frame.add(pixelLettersLabel.labelL);
+        frame.add(pixelLettersLabel.labelA);
 
     }
 
