@@ -10,7 +10,7 @@ public class GameFrame {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Word Game");
         frame.setIconImage(logoImage.getImage());
-        frame.setUndecorated(false);
+        frame.setUndecorated(true);
         frame.getRootPane().setBorder(BorderFactory.createLineBorder(Color.ORANGE,5));
         frame.getContentPane().setBackground(Color.DARK_GRAY);
         frame.setLayout(null);

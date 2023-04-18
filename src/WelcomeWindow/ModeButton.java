@@ -17,7 +17,7 @@ public class ModeButton extends JButton implements ActionListener {
         this.setBorder(BorderFactory.createLineBorder(Color.ORANGE,3));
         this.setFont(new Font("Didot", Font.BOLD, 30));
         this.setForeground(Color.ORANGE);
-        this.setBounds(300,550,200,100);
+        this.setBounds(500,410,200,100);
 
     }
 
