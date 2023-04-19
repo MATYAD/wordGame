@@ -16,16 +16,16 @@ public class CurrentTimeLabel extends JLabel {
 
         this.setVerticalAlignment(JLabel.CENTER);
         this.setHorizontalAlignment(JLabel.CENTER);
-        this.setFont(new Font("Didot",Font.BOLD,69));
+        this.setFont(new Font("Didot",Font.BOLD,20));
         this.setForeground(Color.ORANGE);
-        this.setBounds(1125,50,100,50);
+        this.setBounds(1050,25,100,50);
         timeFormat = new SimpleDateFormat("hh:mm:ss");
 
     }
     public void setTime() throws InterruptedException {
         while(true){
             time = timeFormat.format(Calendar.getInstance().getTime());
-            this.setText("time");
+            this.setText(time);
 
             Thread.sleep(1000);
 

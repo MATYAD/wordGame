@@ -3,8 +3,10 @@ package WelcomeWindow;
 import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
 import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Objects;
 
 
 public class GameNameLabel extends JLabel {
@@ -19,15 +21,19 @@ public class GameNameLabel extends JLabel {
         this.setFont(new FontUIResource("PixelMplus10-Regular.ttf",0,69));
         this.setForeground(Color.ORANGE);
         this.setBounds(300,50,600,150);
+
         /*
         try {
-            pixelMplus = java.awt.Font.createFont(java.awt.Font.TRUETYPE_FONT, new File("PixelMplus10-Regular.ttf")).deriveFont(69f);
-            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-            ge.registerFont(java.awt.Font.createFont(java.awt.Font.TRUETYPE_FONT, new File("PixelMplus10-Regular.ttf")));
-        } catch (IOException | FontFormatException e) {
-
+            this.setFont(Font.createFont(Font.TRUETYPE_FONT, Objects.requireNonNull(getClass().getResource("PixelMplus10-Regular.ttf")).openStream()));
+        } catch(IOException ex){
+            //exception handled here I suppose
+        } catch(FontFormatException ex2) {
+            //same here
         }
         */
+
+
+
         /*
         try {
             InputStream is = GameNameLabel.class.getResourceAsStream("PixelMplus10-Regular.ttf");

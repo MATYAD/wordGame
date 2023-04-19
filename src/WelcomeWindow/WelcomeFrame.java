@@ -7,10 +7,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class WelcomeFrame implements ActionListener {
+public class WelcomeFrame {
     JFrame frame = new JFrame();
     GameNameLabel gameNameLabel = new GameNameLabel();
-    JButton button = new JButton();
+    PlayButton playButton = new PlayButton(this);
     ModeButton modeButton = new ModeButton();
     GridSelectButton gridSelectButton = new GridSelectButton();
     PixelLettersLabel pixelLettersLabel = new PixelLettersLabel();
@@ -31,21 +31,10 @@ public class WelcomeFrame implements ActionListener {
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setVisible(true);
-        
-        button.addActionListener(this::actionPerformed);
-        button.setFocusable(false);
-        button.setText("PLAY");
-        button.setVerticalAlignment(JButton.CENTER);
-        button.setHorizontalAlignment(JButton.CENTER);
-        button.setBackground(Color.BLACK);
-        //button.setContentAreaFilled(false);
-        button.setBorder(BorderFactory.createLineBorder(Color.ORANGE,3));
-        button.setFont(new Font("Didot", Font.BOLD, 30));
-        button.setForeground(Color.ORANGE);
-        button.setBounds(500,290,200,100);
+
         
         frame.add(gameNameLabel);
-        frame.add(button);
+        frame.add(playButton);
         frame.add(modeButton);
         frame.add(gridSelectButton);
         frame.add(pixelLettersLabel.labelN);
@@ -53,18 +42,13 @@ public class WelcomeFrame implements ActionListener {
         frame.add(pixelLettersLabel.labelL);
         frame.add(pixelLettersLabel.labelA);
         frame.add(exitButton);
-        
-        //frame.add(currentTimeLabel);
+        frame.add(currentTimeLabel);
+        currentTimeLabel.setTime();
+
 
     }
 
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource()==button){
-            frame.dispose();
-            GameFrame gameFrame= new GameFrame();
-        }
-
+    public JFrame getFrame() {
+        return frame;
     }
 }

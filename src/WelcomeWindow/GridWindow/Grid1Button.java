@@ -1,20 +1,19 @@
-package WelcomeWindow;
-
-import WelcomeWindow.GridWindow.GridFrame;
+package WelcomeWindow.GridWindow;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class GridSelectButton extends JButton implements ActionListener {
-    String[] responses = {"3x3", "4x4", "5x4", "6x4"};
-    ImageIcon image = new ImageIcon("questionMark.jpg");
-    int answer;
-    public GridSelectButton() {
+public class Grid1Button extends JButton implements ActionListener {
+
+    GridFrame frame;
+
+    public Grid1Button(GridFrame frame) {
+        this.frame = frame;
         this.addActionListener(this);
         this.setFocusable(false);
-        this.setText("GRID");
+        this.setText("3x3");
         this.setVerticalAlignment(JButton.CENTER);
         this.setHorizontalAlignment(JButton.CENTER);
         this.setBackground(Color.BLACK);
@@ -22,15 +21,14 @@ public class GridSelectButton extends JButton implements ActionListener {
         this.setBorder(BorderFactory.createLineBorder(Color.ORANGE,3));
         this.setFont(new Font("Didot", Font.BOLD, 30));
         this.setForeground(Color.ORANGE);
-        this.setBounds(500,530,200,100);
+        this.setBounds(40,300,100,50);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==this){
-
-            GridFrame gridFrame = new GridFrame();
-
+            frame.getFrame().dispose();
+            int grid = 0;
         }
 
     }
