@@ -1,7 +1,8 @@
 package GameWindow;
 
-import GameWindow.GridPanels.BoardPanel3x3;
+
 import WelcomeWindow.ExitButton;
+import WelcomeWindow.GridWindow.SetButton;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,9 +11,20 @@ public class GameFrame {
     JFrame frame = new JFrame();
     TimeLabel timeLabel = new TimeLabel();
     ExitButton exitButton  = new ExitButton();
-    BoardPanel3x3 boardPanel3x3 = new BoardPanel3x3();
+    private JButton[] buttons;
+    SetButton setButton;
+
     ImageIcon logoImage = new ImageIcon("logo.jpg");
-    public GameFrame(){
+    public GameFrame(SetButton setButton) {
+        this.setButton = setButton;
+        int numButtons = setButton.getXSize() * setButton.getYSize();
+        buttons = new JButton[numButtons];
+
+        for (int i = 0; i < numButtons; i++){
+            buttons[i] = new JButton("Button " + (i+1));
+            frame.add(buttons[i]);
+
+        }
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Word Game");
         frame.setIconImage(logoImage.getImage());
@@ -26,8 +38,12 @@ public class GameFrame {
         frame.setVisible(true);
 
         frame.add(timeLabel);
-        frame.add(boardPanel3x3);
         frame.add(exitButton);
+
+    }
+
+    public final void getFrame() {
+        GameFrame gameFrame = new GameFrame(setButton);
 
     }
 }

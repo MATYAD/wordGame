@@ -1,6 +1,7 @@
 package WelcomeWindow;
 
 import GameWindow.GameFrame;
+import WelcomeWindow.GridWindow.SetButton;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,6 +10,8 @@ import java.awt.event.ActionListener;
 
 public class PlayButton extends JButton implements ActionListener {
     WelcomeFrame frame;
+    GameFrame gameFrame;
+    SetButton setButton;
 
     public PlayButton(WelcomeFrame frame) {
         this.frame = frame;
@@ -30,7 +33,7 @@ public class PlayButton extends JButton implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==this){
             frame.getFrame().dispose();
-            GameFrame gameFrame = new GameFrame();
+            GameFrame gameFrame = new GameFrame(setButton);
 
         }
 
